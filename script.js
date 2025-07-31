@@ -8,13 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// File-input label update
-const fileInput = document.getElementById('fileInput');
-const fileLabel = document.getElementById('fileLabel');
-fileInput?.addEventListener('change', () => {
-  const name = fileInput.files[0]?.name || 'No file chosen';
-  fileLabel.textContent = name;
-});
 
 // Contact form validation & submission
 const form = document.getElementById('contactForm');
@@ -48,7 +41,6 @@ form?.addEventListener('submit', async (e) => {
     if (response.ok) {
       alert('Thank you! Your message has been sent.');
       form.reset();
-      fileLabel.textContent = 'No file chosen';
     } else {
       alert('Oops! There was a problem submitting your form.');
     }
